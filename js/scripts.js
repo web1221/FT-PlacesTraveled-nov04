@@ -21,6 +21,7 @@ function Destination(location, landmarks, time, notes){
 
 
 
+
 //user interface Logic
 $(document).ready(function (){
   $('form#form').submit(function(event){
@@ -37,12 +38,14 @@ $(document).ready(function (){
     var destination1 = new Destination(locationInput, landmarkInput, timeInput, notesInput);
 
     myTravel.addDestination(destination1);
-    $('.addResult').append('<li>' + myTravel.destinations[0].location + '</li>' + '<li>' + myTravel.destinations[0].landmarks + '</li>');
+    $('.addResult').append('<li>' + myTravel.destinations[0].location+ '</li>');
     $(".output").show();
 
     console.log(destination1);
-
     console.log(myTravel);
+    $('li').click(function(){
+      $('.addResult').append('<li>' + "Landmark: " + myTravel.destinations[0].landmarks + '</li>' + '<li>' + myTravel.destinations[0].time + '</li>');
+    });
 
 
   });
