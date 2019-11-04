@@ -36,13 +36,14 @@ $(document).ready(function (){
     var myTravel = new Travel();
 
     var destination1 = new Destination(locationInput, landmarkInput, timeInput, notesInput);
-
+    // Could add forEach loop to add index id.
     myTravel.addDestination(destination1);
     $('.addResult').append('<li>' + myTravel.destinations[0].location+ '</li>');
     $(".output").show();
 
     console.log(destination1);
     console.log(myTravel);
+    // Look at .parent(), .children() to find a better way to output results
     $('li').click(function(){
       $('.addResult').append('<li>' + "Landmark: " + myTravel.destinations[0].landmarks + '</li>' + '<li>' + myTravel.destinations[0].time + '</li>');
     });
