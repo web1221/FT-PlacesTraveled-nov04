@@ -22,6 +22,9 @@ var thailand = new Destination('Thailand', 'Wat Po', '2001', 'Such good food!');
 var kansas = new Destination ('Kansas', 'The first Pizza Hut', '2018', 'Not much to see, but really good if you want to watch a movie for cheap');
 
 
+
+
+
 //user interface Logic
 $(document).ready(function (){
   $('form#form').submit(function(event){
@@ -29,13 +32,24 @@ $(document).ready(function (){
     var locationInput = $('input#locationInput').val();
     var landmarkInput = $('input#landmarkInput').val();
     var timeInput = $('input#timeInput').val();
-    var notesInput = $('input#notes').val();
-  })
-  $(".clickable").click(function(event){
-    $('#peru').text(peru).toggle();
+    var notesInput = $('input#notesInput').val();
 
-    event.preventDefault();
-  })
+    console.log(locationInput, landmarkInput, timeInput, notesInput);
+
+    var myTravel = new Travel();
+    var destination1 = new Destination(locationInput, landmarkInput, timeInput, notesInput);
+
+    console.log(destination1);
+
+    myTravel.addDestination(destination1);
+    console.log(myTravel);
+    $('ul').append(myTravel)
+    $(".clickable").click(function(event){
+      $('#peru').text(myTravel).toggle();
+
+      // event.preventDefault();
+    });
+  });
 
 
 
