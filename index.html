@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.4.1"></script>
+    <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
     <title></title>
@@ -11,8 +11,29 @@
   <body>
     <div class="container">
       <h1>Places Traveled!</h1>
+      <form id="form">
+        <div class="form-group">
+        <label for="">Enter a Location:</label>
+        <input type="text" id="locationInput">
+
+        <label for="">Enter a landmark:</label>
+        <input type="text" id="landmarkInput">
+
+        <label for="">Enter a time:</label>
+        <input type="text" id="timeInput">
+
+        <label for="">Enter notes:</label>
+        <input type="text" id="notesInput">
+        </div>
+        <button type="submit" name="button">Submit!</button>
+      </form>
       <ul>
-        <li></li>
+        <li class="clickable">Peru</li>
+          <li id="peru"></li>
+        <li class="clickable">Thailand</li>
+          <li id="thailand"></li>
+        <li class="clickable">Kansas</li>
+          <li id="kansas"></li>
 
       </ul>
     </div>
